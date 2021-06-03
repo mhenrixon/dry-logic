@@ -7,7 +7,7 @@ module Dry
         attr_reader :rule
 
         def initialize(*rules, **options)
-          super
+          super(*rules, **options)
           @rule = rules.first
         end
 

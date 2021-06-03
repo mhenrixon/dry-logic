@@ -16,7 +16,7 @@ module Dry
           else
             name = options.fetch(:name)
             eval = options.fetch(:evaluator, evaluator(name))
-            super(rules, options.merge(evaluator: eval, path: name))
+            super(rules, **options.merge(evaluator: eval, path: name))
           end
         end
 
@@ -25,7 +25,7 @@ module Dry
         end
 
         def initialize(*rules, **options)
-          super
+          super(*rules, **options)
           @evaluator = options[:evaluator]
           @path = options[:path]
         end
