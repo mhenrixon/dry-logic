@@ -7,8 +7,8 @@ module Dry
       class And < Binary
         attr_reader :hints
 
-        def initialize(*)
-          super
+        def initialize(*rules, **options)
+          super(*rules, **options)
           @hints = options.fetch(:hints, true)
         end
 

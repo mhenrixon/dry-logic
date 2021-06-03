@@ -10,7 +10,7 @@ module Dry
 
         attr_reader :path
 
-        def self.new(rules, options)
+        def self.new(rules, **options)
           if options[:evaluator]
             super
           else
